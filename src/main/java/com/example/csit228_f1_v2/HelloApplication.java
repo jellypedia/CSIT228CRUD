@@ -23,6 +23,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class HelloApplication extends Application {
+    String usern, pass;
     @Override
     public void start(Stage stage) throws IOException {
 //        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login-view.fxml"));
@@ -47,6 +48,7 @@ public class HelloApplication extends Application {
         grid.add(lbUsername, 0, 1);
 
         TextField tfUsername = new TextField();
+        usern = tfUsername.getText();
         grid.add(tfUsername, 1, 1);
         tfUsername.setFont(Font.font(30));
 //        tfUsername.setMaxWidth(150);
@@ -61,6 +63,7 @@ public class HelloApplication extends Application {
         grid.add(pfPassword, 1, 2);
 
         TextField tmpPassword = new TextField(pfPassword.getText());
+        pass = tmpPassword.getText();
         tmpPassword.setFont(Font.font(30));
         grid.add(tmpPassword, 1, 2);
         tmpPassword.setVisible(false);
@@ -100,7 +103,11 @@ public class HelloApplication extends Application {
 
         Button btnLogin = new Button("Log In");
         btnLogin.setFont(Font.font(40));
-        grid.add(btnLogin, 0, 3, 2, 1);
+        grid.add(btnLogin, 0,4);
+
+        Button btnReg = new Button("Register");
+        btnLogin.setFont(Font.font(40));
+        grid.add(btnReg, 1, 3);
 
         btnLogin.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -108,6 +115,22 @@ public class HelloApplication extends Application {
                 System.out.println("Hello");
                 try {
                     Parent p = FXMLLoader.load(getClass().getResource("homepage.fxml"));
+                    Scene s = new Scene(p);
+                    stage.setScene(s);
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        btnReg.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                System.out.println("register test");
+                try {
+                    Parent p = FXMLLoader.load(getClass().getResource("login-view.fxml"));
+//                    RegisterController reg = new RegisterController(usern,pass);
                     Scene s = new Scene(p);
                     stage.setScene(s);
                     stage.show();
