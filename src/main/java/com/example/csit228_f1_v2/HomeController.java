@@ -5,6 +5,10 @@ import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.Slider;
 import javafx.scene.control.ToggleButton;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 public class HomeController {
 
     public ToggleButton tbNight;
@@ -31,4 +35,18 @@ public class HomeController {
             tbNight.setText("NIGHT");
         }
     }
+
+    public void onDeleteAcc() {
+        try(Connection c = mySQLConnection.getConnection();
+            PreparedStatement stmt = c.prepareStatement(
+                    "DELETE FROM crudusers WHERE username = ?")) {
+            stmt.setString(1, "test");
+            int rows = stmt.executeUpdate();
+
+            System.out.println("Rows deleted: " + rows);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
