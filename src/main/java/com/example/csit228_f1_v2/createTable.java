@@ -5,15 +5,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class createTable {
-    String username;
-    String password;
 
-    public createTable(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
-
-    public static void main(String[] args) {
+    public void table() {
         Connection c = mySQLConnection.getConnection();
         String query = "CREATE TABLE IF NOT EXISTS CRUDusers (" +
                 "id INT PRIMARY KEY AUTO_INCREMENT," +
@@ -32,6 +25,7 @@ public class createTable {
                 throw new RuntimeException(e);
             }
         }
-
+        System.out.println("Table already exists!");
     }
+
 }
