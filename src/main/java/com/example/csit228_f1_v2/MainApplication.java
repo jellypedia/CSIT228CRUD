@@ -21,7 +21,8 @@ public class MainApplication extends Application {
 
     public static void main(String[] args) {
         createTable table = new createTable();
-        table.table();
+        table.userTable();
+        table.diaryTable();
         launch();
 
     }

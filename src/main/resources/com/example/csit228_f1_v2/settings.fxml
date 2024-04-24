@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="index" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csit228_f1_v2.SettingsPage">
+   <children>
+      <Button fx:id="btnDel" layoutX="433.0" layoutY="317.0" mnemonicParsing="false" onAction="#onDeleteAcc" text="Delete Account" textFill="RED">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Label layoutX="61.0" layoutY="48.0" text="Settings">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="61.0" layoutY="123.0" text="New Username">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtNewUsern" layoutX="60.0" layoutY="144.0" prefHeight="25.0" prefWidth="191.0" />
+      <Label layoutX="61.0" layoutY="177.0" text="Confirm Username">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtConfirmUsern" layoutX="60.0" layoutY="196.0" prefHeight="25.0" prefWidth="191.0" />
+      <Button fx:id="btnUpdateUsern" layoutX="195.0" layoutY="237.0" mnemonicParsing="false" onAction="#onUpdateUsern" text="Update" />
+      <Button fx:id="btnReturn" layoutX="484.0" layoutY="87.0" mnemonicParsing="false" onAction="#onReturn" text="Return" />
+   </children>
+</AnchorPane>

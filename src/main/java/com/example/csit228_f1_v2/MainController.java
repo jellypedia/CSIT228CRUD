@@ -26,6 +26,7 @@ public class MainController {
 //    Stage stage;
 
     static String loggedInUsern;
+    static int loggedInID;
     String username, password;
 
 
@@ -41,7 +42,7 @@ public class MainController {
         if(checkLogIn(username,password)) {
             try {
                 AnchorPane x = pnMain;
-                Parent p = FXMLLoader.load(getClass().getResource("homepage.fxml"));
+                Parent p = FXMLLoader.load(getClass().getResource("Diary-view.fxml"));
                 x.getChildren().clear();
                 x.getChildren().add(p);
 
@@ -64,6 +65,7 @@ public class MainController {
 
             ResultSet res = stmt.executeQuery();
             if (res.next()) {
+                loggedInID = res.getInt(1);
                 return true;
             }
         } catch (SQLException e) {

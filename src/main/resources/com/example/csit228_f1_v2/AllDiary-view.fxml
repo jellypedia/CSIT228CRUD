@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="pnDisplay" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csit228_f1_v2.AllDiary">
+   <children>
+      <ScrollPane layoutX="47.0" layoutY="100.0" prefHeight="249.0" prefWidth="509.0">
+         <content>
+            <Text fx:id="txtDisplay" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="506.13668632507324" />
+         </content>
+      </ScrollPane>
+      <Label layoutX="47.0" layoutY="66.0" text="User's Diary Entries">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnDisplay" layoutX="501.0" layoutY="63.0" mnemonicParsing="false" onAction="#onDisplayEntries" text="Display" />
+      <Button fx:id="btnReturn" layoutX="437.0" layoutY="63.0" mnemonicParsing="false" onAction="#onReturn" text="Return" />
+   </children>
+</AnchorPane>

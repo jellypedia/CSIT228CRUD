@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="pnDiary" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csit228_f1_v2.DiaryPage">
+   <children>
+      <Label layoutX="54.0" layoutY="50.0" text="How are you feeling?">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <TextField fx:id="txtDiaryTitle" layoutX="54.0" layoutY="81.0" promptText="Enter diary title..." />
+      <TextArea fx:id="txtDiaryText" layoutX="54.0" layoutY="118.0" prefHeight="189.0" prefWidth="481.0" promptText="Type in your thoughts..." />
+      <Button fx:id="btnSubmit" layoutX="367.0" layoutY="81.0" mnemonicParsing="false" onAction="#onSubmitEntry" text="Submit" />
+      <Button fx:id="btnDelete" layoutX="484.0" layoutY="81.0" mnemonicParsing="false" onAction="#onDeleteEntry" text="Delete" textFill="RED" />
+      <Button fx:id="btnEdit" layoutX="435.0" layoutY="81.0" mnemonicParsing="false" onAction="#onEditEntry" text="Edit" />
+      <Button fx:id="btnSettings" layoutX="478.0" layoutY="315.0" mnemonicParsing="false" onAction="#onSettings" prefHeight="25.0" prefWidth="61.0" text="Settings" />
+      <Button fx:id="btnDisplayAll" layoutX="370.0" layoutY="315.0" mnemonicParsing="false" onAction="#onDisplayEntry" text="View All Entries" />
+   </children>
+</AnchorPane>
